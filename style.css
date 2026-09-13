@@ -1,0 +1,12 @@
+@font-face{
+    font-family: "cocon";
+    src: url("./fonts/cocon.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: white;
+    background-color: black;
+    font-family: "cocon", sans-serif;
+}
