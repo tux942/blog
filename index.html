@@ -9,18 +9,33 @@
         <h2>dark side of the network.</h2>
         <p>As a rando on the internet, I am a techie, audiophile, basshead i like logical things i cant decode much logic, But i must say im an amazing logical thinker, i own a pc and sevral phones as a pro modder i like to tinker with wiis and quirky tech, its fun and i must say that i am a terrible coder/programmer this site was built from my knoledge... i also use linux and skip microsoft all times, i am a type who also loves photography. i HATE maths despite me being bad at it im an amazing techie.</p>
         <h3>FOSS Forever!</h3>
-        <p>i used to be an avarage google user, i now had some ideas.. where is my privacy and also what did i sign up for? thats right i wanted a stable platform to store my files. but relised where do these servers run? there isnt any privacy nor much encrypyion, it can be monitored from the people who HOST the servers. and i cannot stand 2fa like js use gpg :sob: this is exactly why i moved to FOSS you can use FOSS alternatves to etc youtube. I strongly disagree on androids new apk security system (#keepandroidopen) without FOSS i feel locked up into a controlled enviroment my phone my decisions.</p>
+        <p>as a avarage user of google 2020-mid 2026 i was happy with google, well now i dont, and here's why. Google nowadays is just copying apple to "look cool" and this has a huge impact on older devices. not the ui or the android, The services (Google Play Services) this bogs your phone down even when its a modern one, it takes heaps of your cpu ram and battery always searching for google apps e.g. digital wellbeing for a connection with GMS (Google Play Services) and by remove all google apps i got up to 2.2 days of battery from full charge when i had GMS my phone lasted 1.4 days on high load 24/7 now im happily all foss using Droid-ify i use a moto g22 too as my experience went with it. </p>
+        <h3>my rando hobbies/intrests</h3>
+        <p>Technology, Audio, Routers, Networking, Cats, and even a bit of this blog!</p>
         <br>
-        <h3>Many thanks @jkbinf for css and html formatting, I have built the rest.</h3>
-        <img src=./assets/opensource.png width="80" hight="80" </img>
-        <img src=./assets/linux.jpeg width="80" hight="80" </img>
-        <img src="./assets/debian.png" width="80" hight="80"
+        <h3>Many thanks @jkbinf for css and html formatting, I have built the rest. I have NOT made this cat of the day photo, it was a template.</h3>
+        <img src="./assets/opensource.png" width="80" height="80">
+        <img src="./assets/linux.jpeg" width="80" height="80">
+        <img src="./assets/debian.png" width="80" height="80">
+        <img src="./assets/cat.jpeg" width="80" height="80">
+        <h4>Cat of the day!</h4>
+        <img id="daily-cat" src="" alt="Cat of the day!" width="300" style="display:none; border-radius: 8px;">
         <br>
         <h4>Music: MEOWMEOW - one mow sound</h4>
         <br>
         <audio controls>
-        <source src="./assets/audio.mp3" type="audio/mpeg"
-        your browser is very dumb
+            <source src="./assets/audio.mp3" type="audio/mpeg">
+            your browser is very dumb
         </audio>
+        <script>
+            fetch('https://api.thecatapi.com/v1/images/search')
+                .then(response => response.json())
+                .then(data => {
+                    const catImg = document.getElementById('daily-cat');
+                    catImg.src = data[0].url;
+                    catImg.style.display = 'block';
+                })
+                .catch(error => console.error('Could not fetch a cat today :(', error));
+        </script>
     </body>
 </html>
