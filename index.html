@@ -18,8 +18,6 @@
         <img src="./assets/linux.jpeg" width="80" height="80">
         <img src="./assets/debian.png" width="80" height="80">
         <img src="./assets/cat.jpeg" width="80" height="80">
-        <h4>Cat of the day!</h4>
-        <img id="daily-cat" src="" alt="Cat of the day!" width="300" style="display:none; border-radius: 8px;">
         <br>
         <h4>Music: MEOWMEOW - one mow sound</h4>
         <br>
@@ -27,15 +25,5 @@
             <source src="./assets/audio.mp3" type="audio/mpeg">
             your browser is very dumb
         </audio>
-        <script>
-            fetch('https://api.thecatapi.com/v1/images/search')
-                .then(response => response.json())
-                .then(data => {
-                    const catImg = document.getElementById('daily-cat');
-                    catImg.src = data[0].url;
-                    catImg.style.display = 'block';
-                })
-                .catch(error => console.error('Could not fetch a cat today :(', error));
-        </script>
     </body>
 </html>
